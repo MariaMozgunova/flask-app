@@ -12,7 +12,7 @@ class FlaskAppTests(unittest.TestCase):
         r = self.app.get('/')
         self.assertEqual(
             r.data.decode('utf-8'), 
-            'I did it! You can read more about this app -> ' + \
+            'I did it! You can read more about this app -> ' + 
             'https://github.com/MariaMozgunova/flask-app'
         )
 
