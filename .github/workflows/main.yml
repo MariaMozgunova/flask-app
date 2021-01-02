@@ -55,7 +55,7 @@ jobs:
        key: ${{ secrets.SSH_KEY }}
        passphrase: ${{ secrets.PASSPHRASE }} 
        script: |
-         sudo docker pull mariamozgunova/test-continuous-integration
+         sudo docker pull mariamozgunova/test-continuous-integration:latest 
          sudo docker stop $(sudo docker ps -a -q)
          sudo docker run --rm -d -p 5000:5000 mariamozgunova/test-continuous-integration
 
@@ -69,4 +69,4 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: ${{ github.workflow }} успешно выполнен! 
+        message: ${{ github.workflow }} executed successfully! 
